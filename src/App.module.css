@@ -1,42 +1,128 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.root {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--gray-600);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 736px;
+  margin: -27px auto;
+}
+
+.form input[type="text"] {
+  width: 100%;
+  max-width: 638px;
+  min-height: 54;
+  margin-right: 8px;
+  border-radius: 8px;
+  padding: 16px;
+  border: solid 1px var(--gray-700);
+  color: var(--gray-100);
+  background-color: var(--gray-500);
+  transition: border 0.5s ease;
+}
+
+.form input:focus {
+  border: solid 1px var(--purple-dark);
+  outline: none;
+}
+
+.form button[type="submit"] {
+  width: 90px;
+  min-height: 52px;
+  align-items: center;
+  font-size: 0, 875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--gray-100);
+  background-color: var(--blue-dark);
+  border-radius: 8px;
+  border: none;
+  gap: 8px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.form button[type="submit"]:hover {
+  background-color: var(--blue);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.taskInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+
+.completedTasks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.completedTasks p {
+  font-size: 14;
+  line-height: 16.94px;
+  color: var(--blue);
+}
+
+.createdTasks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.createdTasks p {
+  font-size: 14;
+  line-height: 16.94px;
+  color: var(--purple);
+}
+
+.taskInfo span {
+  font-size: 12;
+  line-height: 14.52px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--gray-200);
+  background-color: var(--gray-400);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .form input[type="text"] {
+    max-width: 80%;
+  }
+
+  .taskInfo {
+    width: 90%;
   }
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+@media (max-width: 550px) {
+  .form input[type="text"] {
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .form button[type="submit"] {
+    width: 100%;
+  }
+
+  .taskInfo {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin: 32px auto;
+  }
 }
